@@ -17,6 +17,11 @@ def collatz(n):
             n = 3 * n + 1
         sequencia.append(n)
     return sequencia
-testes = [2, 3, 4, 10, 25, 40, 32, 100, 1000]
+
+testes = [-1,0,2, 3, 4, 10, 25, 40, 32, 100, 1000, -5, 0]  # Incluí valores inválidos para teste
+
 for t in testes:
-    print(f"Sequência de Collatz para {t}: {collatz(t)}")
+    try:
+        print(f"Sequência de Collatz para {t}: {collatz(t)}")
+    except ValueError as e:
+        print(f"Erro ao calcular a sequência de Collatz para {t}: {e}")
